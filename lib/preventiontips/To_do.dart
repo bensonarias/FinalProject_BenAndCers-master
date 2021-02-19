@@ -12,25 +12,25 @@ class _To_doState extends State<To_do> {
   String subValueContent;
 
   var preDefinedItems = [
-    "SELF-ISOLATE",
-    "SEEK MEDICAL HELP IF NEEDED: ",
-    "PRACTICE SELF-CARE",
-    "PROTECT OTHERS FROM CONTRACTING VIRUS",
-    "PRACTICE PROPER HYGIENE",
-    "CARING FOR SOMEONE WHO IS SICK",
+    "Ihiwawalay ang sarili",
+    "Magpa check-up kung kinakailangan ",
+    "Ugaliing alagaan ang sarili",
+    "Protektahan ang iba na hindi mahawaan",
+    "Ugaliin ang paglinis ng kamay",
+    "Alagaan ang mga nagkasakit",
   ];
 
   var preDefinedSub = [
-    "",
-    "When to call a doctor or the emergency services?",
-    "Ways to practice self-care?",
-    "Ways to protect others from contracting virus?",
-    "Ways to practice hand hygiene",
-    "Ways to care someone in sick",
+    "Kailan dapat ihiwalay ang sarili sa ibang tao?",
+    "Kailan dapat tumawag sa doctor o sa mga emergency hotlines?",
+    "Paraan para aalagaan ang sarili",
+    "Paraan upang hindi mahawa ang ibang tao",
+    "Paraan para linisin ang mga kamay",
+    "Paraan sa pagaalaga ng may sakit",
   ];
 
   var preDefinedCont = [
-    "",
+    "Magkaron ng pagkukusang ihiwalay ang sarili kapag may mga nararampadam ng sintomas",
     "People whose symptoms get worse should call their doctor for advice. "
         "If the symptoms are severe, people should call the emergency services"
         "and let the operator know that they have COVID-19 symptoms."
@@ -109,98 +109,101 @@ class _To_doState extends State<To_do> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.only(top: 15),
-      height: MediaQuery.of(context).size.height,
-      width: double.infinity,
-      child: Stack(
-        children: <Widget>[
-          Align(
-            alignment: Alignment.topLeft,
-            child: IconButton(
-                icon: Icon(
-                  Icons.arrow_back,
-                  color: Colors.white,
-                ),
-                onPressed: () {
-                  Navigator.pop(context);
-                }),
-          ),
-          Container(
-            margin: EdgeInsets.symmetric(horizontal: 32, vertical: 32),
-            child: Column(
-              children: <Widget>[
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Text(
-                      "To do if you are \n infected?",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 30,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    )
-                  ],
-                )
-              ],
+    return Scaffold(
+      backgroundColor: Colors.blue[900],
+      body: Container(
+        margin: EdgeInsets.only(top: 15),
+        height: MediaQuery.of(context).size.height,
+        width: double.infinity,
+        child: Stack(
+          children: <Widget>[
+            Align(
+              alignment: Alignment.topLeft,
+              child: IconButton(
+                  icon: Icon(
+                    Icons.arrow_back,
+                    color: Colors.white,
+                  ),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  }),
             ),
-          ),
-          DraggableScrollableSheet(
-            builder: (context, scrollControler) {
-              return Container(
-                child: SingleChildScrollView(
-                  controller: scrollControler,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 16, vertical: 35),
+              child: Column(
+                children: <Widget>[
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      SizedBox(
-                        height: 24,
-                      ),
-                      Container(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            new ListView.builder(
-                                scrollDirection: Axis.vertical,
-                                shrinkWrap: true,
-                                itemCount: title.length,
-                                itemBuilder: (context, index) {
-                                  return ListTile(
-                                    title: new Text(title[index]),
-                                    leading: Icon(Icons.announcement),
-                                    trailing: Icon(Icons.help),
-                                    onTap: () {
-                                      subValueTitle = preDefinedSub[index];
-                                      subValueContent = preDefinedCont[index];
-                                      createAlertDialog(context)
-                                          .then((onValue) {
-//                                        if (index == 0) {
-//                                        }
-                                      });
-                                    },
-                                  );
-                                })
-                          ],
+                      Text(
+                        "MGA DAPAT \nGAWIN PAG \nMAY NAGKASAKIT",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 25,
+                          fontWeight: FontWeight.w700,
                         ),
-                        padding: EdgeInsets.symmetric(horizontal: 32),
                       )
                     ],
+                  )
+                ],
+              ),
+            ),
+            DraggableScrollableSheet(
+              builder: (context, scrollControler) {
+                return Container(
+                  child: SingleChildScrollView(
+                    controller: scrollControler,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+//                      SizedBox(
+//                        height: 15,
+//                      ),
+                        Container(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              new ListView.builder(
+                                  scrollDirection: Axis.vertical,
+                                  shrinkWrap: true,
+                                  itemCount: title.length,
+                                  itemBuilder: (context, index) {
+                                    return ListTile(
+                                      title: new Text(title[index]),
+                                      leading: Icon(Icons.help),
+//                                    trailing: Icon(Icons.help),
+                                      onTap: () {
+                                        subValueTitle = preDefinedSub[index];
+                                        subValueContent = preDefinedCont[index];
+                                        createAlertDialog(context)
+                                            .then((onValue) {
+//                                        if (index == 0) {
+//                                        }
+                                        });
+                                      },
+                                    );
+                                  })
+                            ],
+                          ),
+                          padding: EdgeInsets.symmetric(horizontal: 14),
+                        )
+                      ],
+                    ),
                   ),
-                ),
-                decoration: BoxDecoration(
-                    color: Color.fromRGBO(243, 245, 248, 1),
-                    borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(40),
-                        topLeft: Radius.circular(40))),
-              );
-            },
-            initialChildSize: 0.80,
-            maxChildSize: 0.95,
-            minChildSize: 0.80,
-          ),
-        ],
+                  decoration: BoxDecoration(
+                      color: Color.fromRGBO(243, 245, 248, 1),
+                      borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(30),
+                          topLeft: Radius.circular(30))),
+                );
+              },
+              initialChildSize: 0.80,
+              maxChildSize: 0.95,
+              minChildSize: 0.80,
+            ),
+          ],
+        ),
       ),
     );
   }

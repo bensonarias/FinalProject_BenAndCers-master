@@ -21,18 +21,18 @@ class other_contacts extends StatelessWidget {
                 }),
           ),
           Container(
-            margin: EdgeInsets.symmetric(horizontal: 32, vertical: 32),
+            margin: EdgeInsets.symmetric(horizontal: 16, vertical: 35),
             child: Column(
               children: <Widget>[
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Text(
-                      "Other Emergency \n Hotlines",
+                      "IBA PANG CONTACTS \nSA ORAS \nNG PANGANGAILANGAN",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 30,
+                        fontSize: 25,
                         fontWeight: FontWeight.w700,
                       ),
                     )
@@ -60,6 +60,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("National Emergency Hotline"),
                                 subtitle: Text("911"),
@@ -72,6 +75,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Trunk Lines:"),
                                 subtitle:
@@ -82,6 +88,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Operations Center:"),
                                 subtitle: Text("(02) 8911-1406, (02) 8912-2665"
@@ -94,6 +103,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text(
                                     "Office of Civil Defense - National Capital Region:"),
@@ -105,6 +117,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title:
                                     Text("Office of Civil Defense - Region I:"),
@@ -115,6 +130,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text(
                                     "Office of Civil Defense - Region IV-A:"),
@@ -125,6 +143,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text(
                                     "Office of Civil Defense - Region IV-B:"),
@@ -135,6 +156,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text(
                                     "NDRRMC - Cordillera Administrative Region:"),
@@ -149,6 +173,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Region I:"),
                                 subtitle:
@@ -159,6 +186,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Region II:"),
                                 subtitle:
@@ -169,6 +199,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Region III:"),
                                 subtitle:
@@ -179,6 +212,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Region IV-A:"),
                                 subtitle: Text("(049) 834-4344, (049) 531-7266"
@@ -189,6 +225,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Region IV-B:"),
                                 subtitle:
@@ -199,6 +238,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Region V:"),
                                 subtitle: Text("+63917-574-7880 (Globe)"
@@ -210,6 +252,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Region VI:"),
                                 subtitle: Text("(033) 336-9353"
@@ -221,6 +266,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Region VII:"),
                                 subtitle: Text("(032) 416-5025, (032) 253-6162"
@@ -236,6 +284,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Text Hotline:"),
                                 subtitle: Text("0918-912-2813"),
@@ -245,6 +296,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Trunk line:"),
                                 subtitle: Text("(02) 8931-8101 to 07"),
@@ -254,6 +308,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Disaster Response Unit:"),
                                 subtitle:
@@ -266,6 +323,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Hotline:"),
                                 subtitle: Text("143"
@@ -276,6 +336,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("National Blood Center:"),
                                 subtitle: Text("(02) 8527-0000 "),
@@ -285,6 +348,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Trunk line:"),
                                 subtitle: Text("(02) 8790-2300"),
@@ -294,6 +360,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Disaster Management Office:"),
                                 subtitle: Text("134 (Staff)"
@@ -305,6 +374,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Emergency Response Unit:"),
                                 subtitle: Text("(02) 8790-2300 local 604"),
@@ -314,6 +386,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Telefax:"),
                                 subtitle: Text("(02) 8527-0864"),
@@ -326,6 +401,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Trunk line:"),
                                 subtitle: Text("(02) 8876 3454"),
@@ -337,6 +415,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Emergency Hotline:"),
                                 subtitle: Text("117, (02) 8722-0650"),
@@ -346,6 +427,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Text hotline:"),
                                 subtitle: Text("0917-847-5757"),
@@ -357,6 +441,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Direct line:"),
                                 subtitle:
@@ -369,6 +456,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Hotlines:"),
                                 subtitle: Text("(02) 8527-8481 to 89"
@@ -379,6 +469,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Telefax:"),
                                 subtitle: Text("(02) 8527-8482 local 6291"),
@@ -388,6 +481,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Text hotline:"),
                                 subtitle: Text("0917-PCG-DOTC (0917-724-3682)"
@@ -400,6 +496,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Hotlines:"),
                                 subtitle: Text("136"),
@@ -409,6 +508,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Trunk line::"),
                                 subtitle: Text("(02) 8882-4151 to 77"
@@ -425,6 +527,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Viber:"),
                                 subtitle: Text("0939-922-7161"),
@@ -436,6 +541,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("DOTr Action Center Hotline:"),
                                 subtitle: Text("7890"),
@@ -445,6 +553,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Trunk line:"),
                                 subtitle: Text("(02) 8790-8300"),
@@ -454,6 +565,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Telefax:"),
                                 subtitle: Text("(02) 8726-4925"),
@@ -466,6 +580,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Operations Center:"),
                                 subtitle:
@@ -479,6 +596,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Text hotline:"),
                                 subtitle: Text("0917-839-6242 (TEXNAIA)"
@@ -489,6 +609,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Trunk lines:"),
                                 subtitle:
@@ -503,6 +626,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Trunk line:"),
                                 subtitle: Text("(045) 499-1464"),
@@ -514,6 +640,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Operations:"),
                                 subtitle: Text("(032) 340-0228"),
@@ -525,6 +654,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Public Assistance Hotline:"),
                                 subtitle: Text("165-66"),
@@ -534,6 +666,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Trunk lines:"),
                                 subtitle:
@@ -546,6 +681,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Administrator Office:"),
                                 subtitle: Text("(02) 8523-9078,(02) 8526-0971"),
@@ -555,6 +693,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Call and Text hotline:"),
                                 subtitle:
@@ -567,6 +708,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("LTO Text hotline:"),
                                 subtitle: Text("Text LTOHELP to 2600 (All networks)"),
@@ -576,6 +720,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Trunk line:"),
                                 subtitle:
@@ -588,6 +735,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("24/7 hotline:"),
                                 subtitle: Text("1342"),
@@ -597,6 +747,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Public Assistance and Complaints:"),
                                 subtitle:
@@ -607,6 +760,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Text hotline:"),
                                 subtitle:
@@ -619,6 +775,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Trunk line:"),
                                 subtitle: Text("(02) 8284-0800"),
@@ -630,6 +789,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Trunk line:"),
                                 subtitle: Text("(02) 8426-1468 to 79"),
@@ -641,6 +803,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Hotline:"),
                                 subtitle: Text("165-02"),
@@ -650,6 +815,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Trunk line:"),
                                 subtitle: Text("(02) 5304-3000"),
@@ -661,6 +829,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("NLEX-SCTEX Hotline:"),
                                 subtitle: Text("1-35000"),
@@ -670,6 +841,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Trunk line:"),
                                 subtitle: Text("(02) 8580-8900"),
@@ -681,6 +855,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("NLEX-SCTEX Hotline:"),
                                 subtitle: Text("1-35000"),
@@ -690,6 +867,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Emergency Number:"),
                                 subtitle: Text("0920-96-SCTEX (72839)"),
@@ -699,6 +879,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Trunk lines:"),
                                 subtitle: Text("(02) 8362-2246, (02) 8362-9997"),
@@ -710,6 +893,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Office Hotline:"),
                                 subtitle: Text("(02) 88-SKYWAY (75-9929)"),
@@ -719,6 +905,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("SMC Tollways Hotline:"),
                                 subtitle: Text("(02) 5318-TOLL (8655)"),
@@ -730,6 +919,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Hotlines:"),
                                 subtitle: Text("(02) 5318-8655"
@@ -744,6 +936,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Hotline:"),
                                 subtitle: Text("(02) 165-8888"),
@@ -753,6 +948,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Trunk lines::"),
                                 subtitle: Text("(02) 8683-8001, (02) 8683-8002"),
@@ -764,6 +962,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Hotlines:"),
                                 subtitle: Text("(43) 756- 7870, (43) 757-2277"),
@@ -775,6 +976,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Hotlines:"),
                                 subtitle: Text("(02) 5319-0041, (02) 5319-0169"),
@@ -786,6 +990,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Hotline:"),
                                 subtitle: Text("(02) 8647-3479 to 91"),
@@ -795,6 +1002,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Line 2 Hotlines:"),
                                 subtitle: Text("(02) 8647-3452"
@@ -807,6 +1017,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Hotline:"),
                                 subtitle: Text("(02) 8929-5347 local 2810"),
@@ -818,6 +1031,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Hotline:"),
                                 subtitle: Text("(02) 8853-5249"),
@@ -827,6 +1043,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Mobile Hotline:"),
                                 subtitle: Text("0919-9999-OTS (687)"),
@@ -838,6 +1057,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Hotlines:"),
                                 subtitle: Text("(02) 8527-3087 to 88"
@@ -850,6 +1072,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Hotline:"),
                                 subtitle: Text("(02) 8856-3132"),
@@ -861,6 +1086,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Hotlines:"),
                                 subtitle: Text("(02) 8532-5347"
@@ -873,6 +1101,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Rescue 161:"),
                                 subtitle: Text("161"
@@ -887,6 +1118,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Radio Room Tactical Operation Center:"),
                                 subtitle: Text("(02) 8646-1631"
@@ -899,6 +1133,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Emergency/ Rescue Hotline:"),
                                 subtitle: Text("(02)641-1907"),
@@ -908,6 +1145,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Hotline:"),
                                 subtitle: Text("(02) 8643-0000"),
@@ -917,6 +1157,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Pasig Ka TEXT::"),
                                 subtitle: Text("0908-899-3333"),
@@ -928,6 +1171,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Makati Public Safety Department (MAPSA hotlines):"),
                                 subtitle: Text("(02) 8819-3270,(02) 8844-3146 "),
@@ -939,6 +1185,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Hotline:"),
                                 subtitle: Text("1627"),
@@ -950,6 +1199,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Hotline:"),
                                 subtitle: Text("1626"),
@@ -959,6 +1211,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Text Hotline:"),
                                 subtitle: Text("0998-864-1446"),
@@ -972,6 +1227,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Hotline:"),
                                 subtitle: Text("(02) 8931-8101 to 07"),
@@ -983,6 +1241,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Hotlines:"),
                                 subtitle: Text("(02) 8734-8639, (02) 8734-8654"
@@ -995,6 +1256,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Hotline:"),
                                 subtitle: Text("(02) 8723-0401 to 20"),
@@ -1006,6 +1270,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Hotline:"),
                                 subtitle: Text("(02) 3410-3213"),
@@ -1017,6 +1284,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Hotlines:"),
                                 subtitle: Text("(02) 8523-8231 to 38"
@@ -1029,6 +1299,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Hotlines:"),
                                 subtitle: Text("(02) 8736-5249,(02) 8736-7712"),
@@ -1038,6 +1311,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Fax Number:"),
                                 subtitle: Text("(02) 8736-4449"),
@@ -1049,6 +1325,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Crisis Hotline:"),
                                 subtitle: Text("0917-899-USAP (8727),"
@@ -1059,6 +1338,9 @@ class other_contacts extends StatelessWidget {
                               margin: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("Trunk line:"),
                                 subtitle: Text("(02) 8531-9001 to 10 local 201"),
@@ -1068,7 +1350,7 @@ class other_contacts extends StatelessWidget {
 
                           ],
                         ),
-                        padding: EdgeInsets.symmetric(horizontal: 32),
+                        padding: EdgeInsets.symmetric(horizontal: 14),
                       )
                     ],
                   ),
@@ -1076,8 +1358,8 @@ class other_contacts extends StatelessWidget {
                 decoration: BoxDecoration(
                     color: Color.fromRGBO(243, 245, 248, 1),
                     borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(40),
-                        topLeft: Radius.circular(40))),
+                        topRight: Radius.circular(30),
+                        topLeft: Radius.circular(30))),
               );
             },
             initialChildSize: 0.80,

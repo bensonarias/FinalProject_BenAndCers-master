@@ -20,7 +20,7 @@ import 'corona/data.dart' as globals;
 class GridDashboard extends StatelessWidget {
   static BuildContext gridpasscontext;
   Items item1 = new Items(
-    title: "Things to Buy",
+    title: "MGA DAPAT BILHIN",
     img: "assets/image/maintobuy.png",
     subtitle: "",
     toch: () {
@@ -33,7 +33,7 @@ class GridDashboard extends StatelessWidget {
   );
 
   Items item2 = new Items(
-    title: "Prevention Tips",
+    title: "TIPS SA PAG-IINGAT",
     img: "assets/image/mainprevention2.png",
     subtitle: "",
     toch: () {
@@ -45,7 +45,7 @@ class GridDashboard extends StatelessWidget {
     },
   );
   Items item3 = new Items(
-    title: "Emergency Hotlines",
+    title: "AGARANG HOTLINES",
     img: "assets/image/help.png",
     subtitle: "",
     toch: () {
@@ -58,7 +58,7 @@ class GridDashboard extends StatelessWidget {
   );
   Items item4 = new Items(
     title: "COVID-19 UPDATES",
-    subtitle: "(Needs internet connection)",
+    subtitle: "(KAILANGAN NG INTERNET)",
     img: "assets/image/epidemic.png",
     toch:() {
       var route = new MaterialPageRoute(
@@ -80,7 +80,11 @@ class GridDashboard extends StatelessWidget {
           mainAxisSpacing: 18,
           children: myList.map((data) {
             return Material(
-                elevation: 5,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0),
+              ),
+              color: Colors.blue[700],
+                elevation: 10,
                 child: InkWell(
                   onTap: data.toch,
                   child: Container(
@@ -97,17 +101,17 @@ class GridDashboard extends StatelessWidget {
                         ),
                         Text(
                           data.title,
-                          style: GoogleFonts.openSans(
+                          style: GoogleFonts.marmelad(
                               textStyle: TextStyle(
-                                  color: Colors.black,
+                                  color: Colors.green[100],
                                   fontSize: 16,
-                                  fontWeight: FontWeight.w600)),
+                                  fontWeight: FontWeight.w700)),
                         ),
                         Text(
                           data.subtitle,
-                          style: GoogleFonts.openSans(
+                          style: GoogleFonts.marmelad(
                               textStyle: TextStyle(
-                                  color: Colors.black,
+                                  color: Colors.green[100],
                                   fontSize: 10,
                                   fontWeight: FontWeight.w400
                               )
@@ -145,16 +149,16 @@ class _thingstobuyState extends State<thingstobuy> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(backgroundColor: Color.fromRGBO(38, 81, 158, 1),
+    return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: selected_tab,
         items: [
           BottomNavigationBarItem(
               icon: new Image.asset("assets/image/add.png",width: 50,height: 50,),
-              label: 'To buy'),
+              label: 'DAPAT BILHIN'),
           BottomNavigationBarItem(
               icon: new Image.asset("assets/image/completed.png",width: 50,height: 50,),
-              label: 'In stock'),
+              label: 'MGA NABILI'),
         ],
         onTap: (index){
           setState(() {
@@ -192,13 +196,13 @@ class _preventiontipsState extends State<preventiontips>{
         items: [
           BottomNavigationBarItem(
               icon: new Image.asset("assets/image/PreventionIcon.png",width: 50,height: 50,),
-              label: 'Prepare'),
+              label: 'I-HANDA'),
           BottomNavigationBarItem(
               icon: new Image.asset("assets/image/Ifmerongcovid.png",width: 50,height: 50,),
-              label: 'To do'),
+              label: 'GAWIN'),
           BottomNavigationBarItem(
               icon: new Image.asset("assets/image/symptoms.png",width: 50,height: 50,),
-              label: 'Symptoms'),
+              label: 'SINTOMAS'),
         ],
         onTap: (index){
           setState(() {
@@ -235,10 +239,10 @@ class _emergencyhotlinesState extends State<emergencyhotlines> {
         items: [
           BottomNavigationBarItem(
               icon: new Image.asset("assets/image/phone.png",width: 50,height: 50,),
-              label: 'Contacts for Pandemic'),
+              label: 'PANDEMIYA'),
           BottomNavigationBarItem(
               icon: new Image.asset("assets/image/emergency-call.png",width: 50,height: 50,),
-              label: 'Other Emergency Hotlines'),
+              label: 'IBA PANG CONTACTS'),
         ],
         onTap: (index){
           setState(() {

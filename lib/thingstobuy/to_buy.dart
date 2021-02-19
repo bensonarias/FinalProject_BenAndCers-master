@@ -71,8 +71,8 @@ class _To_buyState extends State<To_buy> {
           return StatefulBuilder(builder: (context, setState) {
             return AlertDialog(
               title: isUpdate
-                  ? Text("Update item")
-                  : Text("Want to add another item on the checklist?"),
+                  ? Text("Update item", style: TextStyle(fontSize: 20))
+                  : Text("Maari kang magdagdag ng iba pang mga item", style: TextStyle(fontSize: 20)),
               content: Form(
                 key: formkey,
                 autovalidate: true,
@@ -80,7 +80,7 @@ class _To_buyState extends State<To_buy> {
                   autofocus: true,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
-                    labelText: 'Add an item',
+                    labelText: 'I-type ang nais na idagdag',
                     helperText: "$helper",
 //                      suffixText: '$suffix',
                     helperStyle: TextStyle(color: Colors.red[700]),
@@ -88,7 +88,7 @@ class _To_buyState extends State<To_buy> {
                   validator: (_val) {
                     if (_val.isEmpty) {
                       item = "";
-                      return "Please input an Item";
+                      return "Maglagay ng idadagdag";
                     } else {
                       item = _val;
                       return null;
@@ -108,7 +108,9 @@ class _To_buyState extends State<To_buy> {
               actions: <Widget>[
                 MaterialButton(
                   elevation: 5.0,
-                  child: Text("Submit"),
+                  child:isUpdate
+                      ? Text("I-update")
+                      : Text("I-dagdag"),
                   onPressed: () {
                     //will not do anything on the submit button if the field is empty
                     if (item == "") {
@@ -117,7 +119,7 @@ class _To_buyState extends State<To_buy> {
                       if (itemList.contains(item)) {
                         print("list detected");
                         setState(() {
-                          helper = "Item already exist!";
+                          helper = "Nasa listahan na ang nais idagdag!";
                         });
                       } else {
                         if (isUpdate) {
@@ -280,7 +282,7 @@ class _To_buyState extends State<To_buy> {
               ],
             );
           });
-    }else{
+    } else {
       errorMessage();
     }
   }
@@ -307,18 +309,18 @@ class _To_buyState extends State<To_buy> {
                   }),
             ),
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 32, vertical: 32),
+              margin: EdgeInsets.symmetric(horizontal: 16, vertical: 35),
               child: Column(
                 children: <Widget>[
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Text(
-                        "Things Needed",
+                        "MGA DAPAT BILHIN",
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 30,
+                          fontSize: 28,
                           fontWeight: FontWeight.w700,
                         ),
                       )
@@ -336,9 +338,9 @@ class _To_buyState extends State<To_buy> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        SizedBox(
-                          height: 24,
-                        ),
+//                        SizedBox(
+//                          height: 5,
+//                        ),
                         Container(
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -439,7 +441,7 @@ class _To_buyState extends State<To_buy> {
                                   )
                             ],
                           ),
-                          padding: EdgeInsets.symmetric(horizontal: 32),
+                          padding: EdgeInsets.symmetric(horizontal: 14),
                         )
                       ],
                     ),
@@ -447,8 +449,8 @@ class _To_buyState extends State<To_buy> {
                   decoration: BoxDecoration(
                       color: Color.fromRGBO(243, 245, 248, 1),
                       borderRadius: BorderRadius.only(
-                          topRight: Radius.circular(40),
-                          topLeft: Radius.circular(40))),
+                          topRight: Radius.circular(30),
+                          topLeft: Radius.circular(30))),
                 );
 //                original codes ends above
               },
@@ -466,6 +468,7 @@ class _To_buyState extends State<To_buy> {
           mainAxisAlignment: MainAxisAlignment.end,
           children: <Widget>[
             FloatingActionButton.extended(
+              elevation: 10,
               heroTag: null,
               onPressed: () {
                 showdialog(false, null);
@@ -474,19 +477,36 @@ class _To_buyState extends State<To_buy> {
 //                  title.add('$onValue');
 //                });
               },
-              label: Text('Add item'),
+              label: Text(
+                'Dagdag',
+                style: TextStyle(fontStyle: FontStyle.italic, fontSize: 12),
+              ),
               icon: Icon(Icons.add),
-              backgroundColor: Colors.lightBlue,
+              backgroundColor: Colors.blue[700],
             ),
             FloatingActionButton.extended(
+              elevation: 10,
               heroTag: null,
               onPressed: () {
                 moveItem();
               },
-              label: Text('Move in stock'),
-              icon: Icon(Icons.check),
-              backgroundColor: Colors.lightBlue,
+              label: Text(
+                'Nabili na',
+                style: TextStyle(fontStyle: FontStyle.italic, fontSize: 12),
+              ),
+              icon: Icon(Icons.arrow_forward_ios),
+              backgroundColor: Colors.blue[700],
             ),
+            //reference for floating action button with label
+//            FloatingActionButton.extended(
+//              heroTag: null,
+//              onPressed: () {
+//                moveItem();
+//              },
+//              label: Text(''),
+//              icon: Icon(Icons.check),
+//              backgroundColor: Colors.blue[700],
+//            ),
           ],
         ),
       ),

@@ -11,7 +11,7 @@ class _instockState extends State<instock> {
   String item;
 
   List<String> tempTitle =
-      new List<String>(); //for storage of items that are checked
+  new List<String>(); //for storage of items that are checked
   List<String> itemList = new List<String>(); //list of all items in inStock
 
   @override
@@ -54,32 +54,36 @@ class _instockState extends State<instock> {
 
     final collectionRef = Firestore.instance.collection('inStock');
     final futureQuery = collectionRef.getDocuments();
-    await futureQuery.then((value) => value.documents.forEach((element) {
-      print(element.toString());
-      //validation for the movein storck
-      if (element['checkbox'] == true) {
-        validator.add(true);
-        itemsToMove.add(element['items']);
-      }
-    }));
+    await futureQuery.then((value) =>
+        value.documents.forEach((element) {
+          print(element.toString());
+          //validation for the movein storck
+          if (element['checkbox'] == true) {
+            validator.add(true);
+            itemsToMove.add(element['items']);
+          }
+        }));
 
     showDialog(
         context: context,
         builder: (context) {
           return AlertDialog(
-            title: Text("Move items in to buy?"),
+            title: Text(
+              "Ubos na ang mga sumusunod?",
+              style: TextStyle(fontSize: 20),
+            ),
             content: Text(itemsToMove.join("\n")),
             actions: <Widget>[
               MaterialButton(
                 elevation: 5.0,
-                child: Text("Cancel"),
+                child: Text("Hindi pa"),
                 onPressed: () {
                   Navigator.pop(context);
                 },
               ),
               MaterialButton(
                 elevation: 5.0,
-                child: Text("OK"),
+                child: Text("Oo"),
                 onPressed: () async {
                   //will only do the process when the list contains true
                   //meaning that the list of items have an items check
@@ -91,12 +95,13 @@ class _instockState extends State<instock> {
                         'checkbox': false
                       });
                       await futureQuery
-                          .then((value) => value.documents.forEach((element) {
-                        print(element.toString());
-                        if (element['items'] == tempTitle[x]) {
-                          element.reference.delete();
-                        }
-                      }));
+                          .then((value) =>
+                          value.documents.forEach((element) {
+                            print(element.toString());
+                            if (element['items'] == tempTitle[x]) {
+                              element.reference.delete();
+                            }
+                          }));
                     }
                     tempTitle.clear();
                   } else {
@@ -116,7 +121,10 @@ class _instockState extends State<instock> {
       backgroundColor: Colors.blue[900],
       body: Container(
         margin: EdgeInsets.only(top: 15),
-        height: MediaQuery.of(context).size.height,
+        height: MediaQuery
+            .of(context)
+            .size
+            .height,
         width: double.infinity,
         child: Stack(
           children: <Widget>[
@@ -132,14 +140,14 @@ class _instockState extends State<instock> {
                   }),
             ),
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 32, vertical: 32),
+              margin: EdgeInsets.symmetric(horizontal: 16, vertical: 35),
               child: Column(
                 children: <Widget>[
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Text(
-                        "Things completed",
+                        "MGA NABILI NA",
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Colors.white,
@@ -160,9 +168,9 @@ class _instockState extends State<instock> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        SizedBox(
-                          height: 24,
-                        ),
+//                        SizedBox(
+//                          height: 24,
+//                        ),
                         Container(
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -178,17 +186,17 @@ class _instockState extends State<instock> {
                                           scrollDirection: Axis.vertical,
                                           shrinkWrap: true,
                                           itemCount:
-                                              snapshot.data.documents.length,
+                                          snapshot.data.documents.length,
                                           itemBuilder: (context, index) {
                                             DocumentSnapshot ds =
-                                                snapshot.data.documents[index];
+                                            snapshot.data.documents[index];
                                             for (int x = 0;
-                                                x <
-                                                    snapshot
-                                                        .data.documents.length;
-                                                x++) {
+                                            x <
+                                                snapshot
+                                                    .data.documents.length;
+                                            x++) {
                                               if (snapshot.data.documents[x]
-                                                      ['checkbox'] ==
+                                              ['checkbox'] ==
                                                   true) {
                                                 if (!tempTitle.contains(snapshot
                                                     .data
@@ -205,9 +213,9 @@ class _instockState extends State<instock> {
                                               child: ListTile(
                                                   title: Text(ds['items']),
                                                   leading: ds['checkbox'] ==
-                                                          false
+                                                      false
                                                       ? Icon(Icons
-                                                          .check_box_outline_blank)
+                                                      .check_box_outline_blank)
                                                       : Icon(Icons.check_box),
                                                   onLongPress: () {
 //                                            showOptionsDialog(ds);
@@ -218,7 +226,7 @@ class _instockState extends State<instock> {
                                                       db
                                                           .collection('inStock')
                                                           .document(
-                                                              ds.documentID)
+                                                          ds.documentID)
                                                           .updateData({
                                                         'checkbox': true
                                                       });
@@ -226,7 +234,7 @@ class _instockState extends State<instock> {
                                                       db
                                                           .collection('inStock')
                                                           .document(
-                                                              ds.documentID)
+                                                          ds.documentID)
                                                           .updateData({
                                                         'checkbox': false
                                                       });
@@ -240,11 +248,11 @@ class _instockState extends State<instock> {
                                       return CircularProgressIndicator();
                                     }
                                   }
-                                  )
+                              )
 //
                             ],
                           ),
-                          padding: EdgeInsets.symmetric(horizontal: 32),
+                          padding: EdgeInsets.symmetric(horizontal: 14),
                         )
                       ],
                     ),
@@ -252,8 +260,8 @@ class _instockState extends State<instock> {
                   decoration: BoxDecoration(
                       color: Color.fromRGBO(243, 245, 248, 1),
                       borderRadius: BorderRadius.only(
-                          topRight: Radius.circular(40),
-                          topLeft: Radius.circular(40))),
+                          topRight: Radius.circular(30),
+                          topLeft: Radius.circular(30))),
                 );
               },
               initialChildSize: 0.85,
@@ -269,19 +277,22 @@ class _instockState extends State<instock> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: <Widget>[
-            FloatingActionButton.extended(
-              heroTag: null,
-              onPressed: () {
-                moveItem();
-              },
+        FloatingActionButton.extended(
+        heroTag: null,
+          onPressed: () {
+            moveItem();
+          },
 //              child: Icon(Icons.check),
-              label: Text('Remove from stock'),
-              icon: Icon(Icons.cancel),
-              backgroundColor: Colors.red[400],
-            ),
-          ],
+          label: Text(
+          'Tanggalin sa stock',
+          style: TextStyle(fontStyle: FontStyle.italic, fontSize: 12),
         ),
+        icon: Icon(Icons.cancel),
+        backgroundColor: Colors.red[500],
       ),
+      ],
+    ),)
+    ,
     );
   }
 }

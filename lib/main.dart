@@ -352,34 +352,21 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'config/palette.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Demo',
         theme: ThemeData(
-          // This is the theme of your application.
-          //
-          // Try running your application with "flutter run". You'll see the
-          // application has a blue toolbar. Then, without quitting the app, try
-          // changing the primarySwatch below to Colors.green and then invoke
-          // "hot reload" (press "r" in the console where you ran "flutter run",
-          // or simply save your changes to "hot reload" in a Flutter IDE).
-          // Notice that the counter didn't reset back to zero; the application
-          // is not restarted.
           primarySwatch: Colors.blue,
-          // This makes the visual density adapt to the platform that you run
-          // the app on. For desktop platforms, the controls will be smaller and
-          // closer together (more dense) than on mobile platforms.
           visualDensity: VisualDensity.adaptivePlatformDensity,
+          textTheme: GoogleFonts.libreBaskervilleTextTheme(
+            Theme.of(context).textTheme,
+          ),
         ),
         home: Splash_screen()
-
         ,debugShowCheckedModeBanner: false);
   }
 }
@@ -420,6 +407,7 @@ class About extends StatelessWidget{
 
 About_app(BuildContext context){
   return Container(
+
     child: Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: <Widget>[
@@ -437,10 +425,9 @@ About_app(BuildContext context){
         ),
 
         Container(
-          height: 350,
-          margin: EdgeInsets.symmetric(horizontal: 32),
+          height: 500,
+          margin: EdgeInsets.symmetric(horizontal: 25),
           decoration: BoxDecoration(
-
             borderRadius: BorderRadius.all(Radius.circular(10)),
             color: Colors.white,
           ),
@@ -454,7 +441,10 @@ About_app(BuildContext context){
                     fontSize: 28,
                     fontWeight: FontWeight.w900
                 ),),
-              Text("Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
+              Text("Ang mobile application na ito ay para sa mga Filipino na nais na"
+                  "maging handa sa paparating o kasalukuyang pandemiya na nagaganap sa"
+                  "Pilipinas. Layunin nito na maging ma-agap ang mga Pilipino upang"
+                  "palaging maging handa sa kahit na anong pandemiya.",
                 style: TextStyle(
                     color: Colors.grey,
                     fontSize: 12,
@@ -475,7 +465,7 @@ About_app(BuildContext context){
                   ),
                 ],
               ),
-              Text("Benson Arias",
+              Text("Ronald Benson Arias",
                 style: TextStyle(
                     color: Colors.grey,
                     fontSize: 23,
@@ -505,7 +495,13 @@ About_app(BuildContext context){
                     fontSize: 28,
                     fontWeight: FontWeight.w900
                 ),),
-              Text("Icons made by Freepik and Flat Icons ('https://www.flaticon.com/authors/freepik' \n 'https://www.flaticon.com/authors/flat-icons')",
+              Text("Ang mga icon ay gawa ng Freepik and Flat Icons ('https://www.flaticon.com/authors/freepik' \n 'https://www.flaticon.com/authors/flat-icons')",
+                style: TextStyle(
+                    color: Colors.grey,
+                    fontSize: 12,
+                    fontWeight: FontWeight.w900
+                ),),
+              Text("\nAng mga impormasyon ay nang galing sa 'Medical New Today' at 'gov.ph'('https://www.medicalnewstoday.com/articles/what-to-do-if-you-start-to-feel-covid-symptoms#calling-a-doctor' \n 'https://www.gov.ph/hotlines')",
                 style: TextStyle(
                     color: Colors.grey,
                     fontSize: 12,
@@ -521,15 +517,16 @@ About_app(BuildContext context){
 MainBody(BuildContext context){
   GridDashboard.gridpasscontext=context;
   return Scaffold(
-    backgroundColor: Palette.primaryColor,
+//    backgroundColor: Palette.primaryColor,
+  backgroundColor: Colors.green[100],
     body: Column(
       children: <Widget>[
         SizedBox(
-          height: 80,
+          height: 30,
         ),
         Align(
           alignment: Alignment.topRight,
-          child: IconButton(icon: Icon(Icons.info,color: Colors.white,),
+          child: IconButton(icon: Icon(Icons.info,color: Colors.blue[700],),
               onPressed: (){
                 Navigator.push(
                   context,
@@ -541,29 +538,29 @@ MainBody(BuildContext context){
           alignment: Alignment.center,
           child:Text(
             "AGAP",
-            style: GoogleFonts.openSans(
+            style: GoogleFonts.ranchers(
                 textStyle: TextStyle(
-                    color: Colors.white,
-                    fontSize: 30,
+                    color: Colors.blue[700],
+                    fontSize: 90,
                     fontWeight: FontWeight.bold)),
           ),
         ),
+//        SizedBox(
+//          height: 1,
+//        ),
+//        Align(
+//            alignment: Alignment.center,
+//            child: Text(
+//              "Home",
+//              style: GoogleFonts.permanentMarker(
+//                  textStyle: TextStyle(
+//                      color: Colors.white,
+//                      fontSize: 20,
+//                      fontWeight: FontWeight.w600)),
+//            )
+//        ),
         SizedBox(
-          height: 4,
-        ),
-        Align(
-            alignment: Alignment.center,
-            child: Text(
-              "Home",
-              style: GoogleFonts.openSans(
-                  textStyle: TextStyle(
-                      color: Colors.white,
-                      fontSize: 15,
-                      fontWeight: FontWeight.w600)),
-            )
-        ),
-        SizedBox(
-          height: 40,
+          height: 60,
         ),
         GridDashboard()
       ],

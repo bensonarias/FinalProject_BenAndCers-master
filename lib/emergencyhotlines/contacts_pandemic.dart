@@ -21,18 +21,18 @@ class contacts extends StatelessWidget {
                 }),
           ),
           Container(
-            margin: EdgeInsets.symmetric(horizontal: 32, vertical: 32),
+            margin: EdgeInsets.symmetric(horizontal: 16, vertical: 35),
             child: Column(
               children: <Widget>[
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Text(
-                      "Contacts for \n Pandemic",
+                      "MGA CONTACTS \nSA ORAS NG \nPANDEMIYA",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 30,
+                        fontSize: 25,
                         fontWeight: FontWeight.w700,
                       ),
                     )
@@ -59,6 +59,9 @@ class contacts extends StatelessWidget {
                             Card(
                               margin: EdgeInsets.symmetric(vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("(02) 894-COVID or (02)894-26843 "),
                                 subtitle: Text("Open to all Callers nationwide"),
@@ -67,6 +70,9 @@ class contacts extends StatelessWidget {
                             Card(
                               margin: EdgeInsets.symmetric(vertical: 5.0, horizontal: 0.0),
                               child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                                 leading: Icon(Icons.phone),
                                 title: Text("1555"),
                                 subtitle: Text("For PLDT, Smart, Sun, and TNT Subscribers"),
@@ -74,7 +80,7 @@ class contacts extends StatelessWidget {
                             ),
                           ],
                         ),
-                        padding: EdgeInsets.symmetric(horizontal: 32),
+                        padding: EdgeInsets.symmetric(horizontal: 14),
                       )
                     ],
                   ),
@@ -82,8 +88,8 @@ class contacts extends StatelessWidget {
                 decoration: BoxDecoration(
                     color: Color.fromRGBO(243, 245, 248, 1),
                     borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(40),
-                        topLeft: Radius.circular(40))),
+                        topRight: Radius.circular(30),
+                        topLeft: Radius.circular(30))),
               );
             },
             initialChildSize: 0.80,
