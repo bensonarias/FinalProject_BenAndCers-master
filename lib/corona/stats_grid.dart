@@ -3,6 +3,8 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'model/Tcases.dart';
 import 'package:final_project/corona/data.dart' as globals;
+import "package:intl/intl.dart";
+
 
 
 class StatsGrid extends StatefulWidget {
@@ -29,7 +31,8 @@ class _StatsGridState extends State<StatsGrid> {
     super.initState();
     this.getJsonData();
   }
-
+  var condition=1;
+  var condition2=1;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -40,15 +43,24 @@ class _StatsGridState extends State<StatsGrid> {
               future: getJsonData(),
               builder:(BuildContext context,Snapshot){
                 if(Snapshot.hasData){
-                  var covid =Snapshot.data;
-                  return Flexible(
-                    child: Row(
-                      children: <Widget>[
-                        _buildStatCard('Total Cases', "${covid.cases}", Colors.orange),
-                        _buildStatCard('Deaths', "${covid.deaths}", Colors.red),
-                      ],
-                    ),
-                  );
+                  ++condition;
+                  if(condition%2!=0){
+                    return CircularProgressIndicator();
+                  }else {
+                    var covid = Snapshot.data;
+                    return Flexible(
+                      child: Row(
+                        children: <Widget>[
+                          _buildStatCard('Total Cases',
+                              "${new NumberFormat("###,000", "en_US").format(
+                                  covid.cases)}", Colors.orange),
+                          _buildStatCard('Deaths',
+                              "${new NumberFormat("###,000", "en_US").format(
+                                  covid.deaths)}", Colors.red),
+                        ],
+                      ),
+                    );
+                  }
                 }else if(Snapshot.hasError){
                   return Text(Snapshot.error.toString());
                 }else{
@@ -61,14 +73,23 @@ class _StatsGridState extends State<StatsGrid> {
               builder:(BuildContext context,Snapshot){
                 if(Snapshot.hasData){
                   var covid =Snapshot.data;
-                  return  Flexible(
-                    child: Row(
-                      children: <Widget>[
-                        _buildStatCard('Recovered', "${covid.recovered}", Colors.green),
-                        _buildStatCard('Active', "${covid.actived}", Colors.lightBlue),
-                      ],
-                    ),
-                  );
+                  ++condition2;
+                  if(condition2%2!=0){
+                    return CircularProgressIndicator();
+                  }else {
+                    return Flexible(
+                      child: Row(
+                        children: <Widget>[
+                          _buildStatCard('Recovered',
+                              "${new NumberFormat("###,000", "en_US").format(
+                                  covid.recovered)}", Colors.green),
+                          _buildStatCard('Active',
+                              "${new NumberFormat("###,000", "en_US").format(
+                                  covid.actived)}", Colors.lightBlue),
+                        ],
+                      ),
+                    );
+                  }
                 }else if(Snapshot.hasError){
                   return Text(Snapshot.error.toString());
                 }else{

@@ -8,8 +8,6 @@ import 'package:final_project/thingstobuy/to_buy.dart';
 import 'package:final_project/thingstobuy/in_stock.dart';
 import 'package:final_project/emergencyhotlines/contacts_pandemic.dart';
 import 'package:final_project/emergencyhotlines/other_contacts.dart';
-import 'package:final_project/corona/choicesdashboard.dart';
-import 'package:final_project/corona/data.dart';
 import 'package:final_project/corona/stats_grid.dart';
 import 'config/palette.dart';
 import 'config/styles.dart';
@@ -80,10 +78,10 @@ class GridDashboard extends StatelessWidget {
           mainAxisSpacing: 18,
           children: myList.map((data) {
             return Material(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10.0),
-              ),
-              color: Colors.blue[700],
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+                color: Colors.blue[700],
                 elevation: 10,
                 child: InkWell(
                   onTap: data.toch,
@@ -259,39 +257,7 @@ class _emergencyhotlinesState extends State<emergencyhotlines> {
   }
 }
 
-class covidUpdates extends StatefulWidget {
-  @override
-  _covidUpdatesState createState() => _covidUpdatesState();
-}
 
-class _covidUpdatesState extends State<covidUpdates> {
-  @override
-  Widget build(BuildContext context) {
-    Corona_updates.gridpasscontext=context;
-    return Scaffold(
-      backgroundColor: Colors.blue,
-      body: Column(
-        children: <Widget>[
-          SizedBox(
-            height: 60,
-          ),
-          Text(
-            "COVID-19 UPDATES",
-            style: GoogleFonts.openSans(
-                textStyle: TextStyle(
-                    color: Colors.white,
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold)),
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          Corona_updates()
-        ],
-      ),
-    );
-  }
-}
 
 class newCovidUpdates extends StatefulWidget {
   @override
@@ -322,7 +288,7 @@ class _newCovidUpdatesState extends State<newCovidUpdates> {
             SliverPadding(
               padding: const EdgeInsets.only(top: 20.0),
               sliver: SliverToBoxAdapter(
-                child: CovidBarChart(covidCases: covidUSADailyNewCases),
+                child: new CovidBarChart(),
               ),
             )
           ],
@@ -335,14 +301,27 @@ class _newCovidUpdatesState extends State<newCovidUpdates> {
     return SliverPadding(
       padding: const EdgeInsets.all(20.0),
       sliver: SliverToBoxAdapter(
-        child: Text(
-          'Covid-19 Updates',
-          style: const TextStyle(
-            color: Colors.white,
-            fontSize: 25.0,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
+          child: Row(
+            children: <Widget>[
+              IconButton(
+                  icon: Icon(
+                    Icons.arrow_back,
+                    color: Colors.white,
+                  ),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  }),
+              Text(
+                'Covid-19 Updates',
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 25.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+
+            ],
+          )
       ),
     );
   }
@@ -373,9 +352,10 @@ class _newCovidUpdatesState extends State<newCovidUpdates> {
             ],
             onTap: (index) {
               if(index == 0){
-                body:Container();
                 setState(() {
-                  globals.link="https://disease.sh/v3/covid-19/countries/Philippines?yesterday=true&twoDaysAgo=true";
+                  globals.link="https://disease.sh/v3/covid-19/countries/Philippines";
+                  globals.chart_link="https://disease.sh/v3/covid-19/historical/Philippines?lastdays=all";
+
                 });
               }else if(index == 1){
                 setState(() {
@@ -384,6 +364,7 @@ class _newCovidUpdatesState extends State<newCovidUpdates> {
               }else if(index == 2){
                 setState(() {
                   globals.link="https://disease.sh/v3/covid-19/all";
+                  globals.chart_link="https://disease.sh/v3/covid-19/historical/all?lastdays=all";
                 });
               }
             },
