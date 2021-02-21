@@ -1,22 +1,85 @@
-import 'package:final_project/config/styles.dart';
-import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'package:charts_flutter/flutter.dart' as charts;
+import 'dart:convert';
+import "package:intl/intl.dart";
+import 'package:final_project/corona/data.dart' as globals;
+
+import 'model/covid_bar_chart.dart';
 
 class CovidBarChart extends StatefulWidget {
-  List<double> covidCases;
-  CovidBarChart({@required this.covidCases});
   @override
-  _CovidBarChartState createState() => _CovidBarChartState(covidCases);
+  _CovidBarChartState createState() => _CovidBarChartState();
 }
 
 class _CovidBarChartState extends State<CovidBarChart> {
-  List<double> covidCases;
-  _CovidBarChartState(covidCases){
-    this.covidCases=covidCases;
+  List<charts.Series<TimeSeriesSales, DateTime>> seriesList;
+  Future <Chart_Tcases> getJsonData() async{
+    var response = await http.get(
+      Uri.encodeFull(globals.chart_link),
+    );
+
+    if(response.statusCode==200){
+      var convertDataJson=null;
+      if(globals.chart_link=="https://disease.sh/v3/covid-19/historical/all?lastdays=all"){
+        convertDataJson = jsonDecode(response.body);
+      }else{
+        convertDataJson = jsonDecode(response.body)['timeline'];
+      }
+      return Chart_Tcases.fromJson(convertDataJson);
+    }else{
+      throw Exception("Check your internet connection or try again");
+    }
   }
+  generateData(days,days_val0,days_val1,days_val2,days_val3,days_val4,days_val5,days_val6) {
+
+    var days0 = new DateTime(days.year, days.month- 6, days.day );
+
+    var days1 = new DateTime(days.year, days.month- 5 , days.day);
+
+    var days2 = new DateTime(days.year, days.month- 4 , days.day);
+
+    var days3 = new DateTime(days.year, days.month- 3 , days.day);
+
+    var days4 = new DateTime(days.year, days.month- 2 , days.day);
+
+    var days5 = new DateTime(days.year, days.month- 1 , days.day);
+
+    var days6 = new DateTime(days.year, days.month, days.day);
+
+
+
+    var newlinesalesdata = [
+      new TimeSeriesSales(days0, days_val0),
+      new TimeSeriesSales(days1, days_val1),
+      new TimeSeriesSales(days2, days_val2),
+      new TimeSeriesSales(days3, days_val3),
+      new TimeSeriesSales(days4, days_val4),
+      new TimeSeriesSales(days5, days_val5),
+      new TimeSeriesSales(days6, days_val6),
+    ];
+
+    seriesList.add(
+      charts.Series(
+        colorFn: (__, _) => charts.ColorUtil.fromDartColor(Color(0xffff9900)),
+        id: 'LineGraph',
+        domainFn: (TimeSeriesSales sales, _) => sales.time,
+        measureFn: (TimeSeriesSales sales, _) => sales.sales,
+        data: newlinesalesdata,
+      ),
+    );
+  }
+  var condition=1;
+  @override void initState() {
+    // TODO: implement initState
+    super.initState();
+    this.getJsonData();
+    seriesList = List<charts.Series<TimeSeriesSales, DateTime>>();
+  }
+
+
   @override
   Widget build(BuildContext context) {
-    bool isTouched = false;
     return Container(
       height: 400.0,
       decoration: BoxDecoration(
@@ -32,91 +95,117 @@ class _CovidBarChartState extends State<CovidBarChart> {
             padding: const EdgeInsets.all(20.0),
             alignment: Alignment.centerLeft,
             child: Text(
-              'Statistics',
+              'Cases Statistics',
               style: const TextStyle(
                 fontSize: 22.0,
                 fontWeight: FontWeight.bold,
               ),
             ),
           ),
-          Container(
-            width: MediaQuery.of(context).size.width * 0.85,
-            child: BarChart(
-              BarChartData(
-                alignment: BarChartAlignment.spaceAround,
-                maxY: 16.0,
-                barTouchData: BarTouchData(enabled: false),
-                titlesData: FlTitlesData(
-                  show: true,
-                  bottomTitles: SideTitles(
-                    margin: 10.0,
-                    showTitles: true,
-                    getTextStyles: (value) => Styles.chartLabelsTextStyle,
-                    rotateAngle: 35.0,
-                    getTitles: (double value) {
-                      switch (value.toInt()) {
-                        case 0:
-                          return 'May 24';
-                        case 1:
-                          return 'May 25';
-                        case 2:
-                          return 'May 26';
-                        case 3:
-                          return 'May 27';
-                        case 4:
-                          return 'May 28';
-                        case 5:
-                          return 'May 29';
-                        case 6:
-                          return 'May 30';
-                        default:
-                          return '';
-                      }
-                    },
-                  ),
-                  leftTitles: SideTitles(
-                      margin: 10.0,
-                      showTitles: true,
-                      getTextStyles: (value) => Styles.chartLabelsTextStyle,
-                      getTitles: (value) {
-                        if (value == 0) {
-                          return '0';
-                        } else if (value % 3 == 0) {
-                          return '${value ~/ 3 * 5}K';
-                        }
-                        return '';
-                      }),
-                ),
-                gridData: FlGridData(
-                  show: true,
-                  checkToShowHorizontalLine: (value) => value % 3 == 0,
-                  getDrawingHorizontalLine: (value) => FlLine(
-                    color: Colors.black12,
-                    strokeWidth: 1.0,
-                    dashArray: [5],
-                  ),
-                ),
-                borderData: FlBorderData(show: false),
-                barGroups: covidCases
-                    .asMap()
-                    .map((key, value) => MapEntry(
-                    key,
-                    BarChartGroupData(
-                      x: key,
-                      barRods: [
-                        BarChartRodData(
-                            y:value,
-                            colors:[Colors.red]
-                        ),
-                      ],
-                    )))
-                    .values
-                    .toList(),
-              ),
-            ),
-          ),
+          FutureBuilder(
+              future: getJsonData(),
+              builder:(BuildContext context,Snapshot){
+                if(Snapshot.hasData){
+                  seriesList =null;
+                  seriesList = List<charts.Series<TimeSeriesSales, DateTime>>();
+                  ++condition;
+                  if(condition%2!=0){
+                    return CircularProgressIndicator();
+                  }else {
+                    var covid = Snapshot.data;
+
+                    DateTime now = new DateTime.now();
+                    DateTime date = new DateTime(now.year, now.month, now.day);
+                    var days0 = new DateTime(
+                        date.year, date.month - 6, date.day);
+
+                    var formatter = new DateFormat('M/dd/yy');
+                    String date0 = formatter.format(days0);
+
+                    var days1 = new DateTime(
+                        date.year, date.month - 5, date.day);
+                    String date1 = formatter.format(days1);
+
+                    var days2 = new DateTime(
+                        date.year, date.month - 4, date.day);
+                    String date2 = formatter.format(days2);
+
+                    var days3 = new DateTime(
+                        date.year, date.month - 3, date.day);
+                    String date3 = formatter.format(days3);
+
+                    var days4 = new DateTime(
+                        date.year, date.month - 2, date.day);
+                    String date4 = formatter.format(days4);
+
+                    var days5 = new DateTime(
+                        date.year, date.month - 1, date.day);
+                    String date5 = formatter.format(days5);
+
+                    var days6 = new DateTime(date.year, date.month, date.day);
+                    String date6 = formatter.format(days6);
+
+                    print(date6);
+                    print(covid.cases['$date6']);
+                    generateData(
+                        date,
+                        covid.cases['$date0'],
+                        covid.cases['$date1'],
+                        covid.cases['$date2'],
+                        covid.cases['$date3'],
+                        covid.cases['$date4'],
+                        covid.cases['$date5'],
+                        covid.cases['$date6']);
+
+                    return Flexible(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Expanded(
+                              child: charts.TimeSeriesChart(
+                                  seriesList,
+                                  defaultRenderer: new charts
+                                      .LineRendererConfig(
+                                      includeArea: true, stacked: true),
+                                  animate: true,
+                                  domainAxis: new charts
+                                      .EndPointsTimeAxisSpec(),
+                                  animationDuration: Duration(seconds: 5),
+                                  behaviors: [
+                                    new charts.ChartTitle('Date',
+                                        behaviorPosition: charts
+                                            .BehaviorPosition.bottom,
+                                        titleOutsideJustification: charts
+                                            .OutsideJustification
+                                            .middleDrawArea),
+                                    new charts.ChartTitle('Data',
+                                        behaviorPosition: charts
+                                            .BehaviorPosition.start,
+                                        titleOutsideJustification: charts
+                                            .OutsideJustification
+                                            .middleDrawArea),
+                                  ]
+                              ))
+                        ],
+                      ),
+                    );
+                  }
+                }else if(Snapshot.hasError){
+                  return Text(Snapshot.error.toString());
+                }else{
+                  return CircularProgressIndicator();
+                }
+              }
+          )
         ],
       ),
     );
   }
+}
+
+class TimeSeriesSales {
+  DateTime time;
+  int sales;
+
+  TimeSeriesSales(this.time, this.sales);
 }
