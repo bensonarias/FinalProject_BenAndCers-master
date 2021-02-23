@@ -360,11 +360,12 @@ class _newCovidUpdatesState extends State<newCovidUpdates> {
               }else if(index == 1){
                 setState(() {
                   globals.link="https://disease.sh/v3/covid-19/continents/asia?strict=true";
+                    globals.chart_link="https://disease.sh/v3/covid-19/historical/Afghanistan%2C%20Armenia%2C%20Azerbaijan%2C%20Bahrain%2C%20Bangladesh%2C%20Bhutan%2C%20Brunei%2C%20Cambodia%2C%20China%2C%20Cyprus%2C%20Georgia%2C%20India%2C%20Indonesia%2C%20Iran%2C%20Iraq%2C%20Israel%2C%20Japan%2C%20Jordan%2C%20Kazakhstan%2C%20Kuwait%2C%20Kyrgyzstan%2C%20Laos%2C%20Lebanon%2C%20Malaysia%2C%20Maldives%2C%20Mongolia%2C%20Burma%20%2C%20Nepal%2C%20Oman%2C%20Pakistan%2C%20Philippines%2C%20Qatar%20%2C%20Saudi%20Arabia%2C%20Singapore%2C%20Sri%20Lanka%2C%20Syrian%20Arab%20Republic%20%2C%20Taiwan%2C%20Tajikistan%2C%20Thailand%2C%20Timor-Leste%2C%20Turkey%2C%20UAE%2C%20Uzbekistan%2CS.%20korea%2C%20Vietnam%2C%20Yemen?lastdays=220";
                 });
               }else if(index == 2){
                 setState(() {
                   globals.link="https://disease.sh/v3/covid-19/all";
-                  globals.chart_link="https://disease.sh/v3/covid-19/historical/all?lastdays=all";
+                  globals.chart_link="https://disease.sh/v3/covid-19/historical/all?lastdays=220";
                 });
               }
             },
