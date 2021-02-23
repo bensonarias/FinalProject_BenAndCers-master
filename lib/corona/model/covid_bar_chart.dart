@@ -31,7 +31,6 @@ class Chart_Tcases {
     int output4=0;
     int output5=0;
     int output6=0;
-    print("here at chatTcases");
     for(int i = 0; i<46;i++){
         for(int j=0;j<7;j++){
           DateTime now = new DateTime.now();
@@ -39,8 +38,8 @@ class Chart_Tcases {
           var days0 = new DateTime(date.year, date.month -j, date.day-1);
           var formatter = new DateFormat('M/dd/yy');
           String date0 = formatter.format(days0);
-            print((date0));
-            print(json[i]['timeline']['cases']['$date0']);
+//            print((date0));
+//            print(json[i]['timeline']['cases']['$date0']);
           switch(j) {
             case 0: {  print('here at $i and $j'); output0 = (json[i]['timeline']['cases']['$date0']) + output0;    print(output0); }
             break;

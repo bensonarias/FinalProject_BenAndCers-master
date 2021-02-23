@@ -104,7 +104,7 @@ class _CovidBarChartState extends State<CovidBarChart> {
             padding: const EdgeInsets.all(20.0),
             alignment: Alignment.centerLeft,
             child: Text(
-              'Cases Bar-Chart based on JOHNS HOPKINS University',
+              'Cases TimeSeries Chart based on JOHNS HOPKINS University',
               style: const TextStyle(
                 fontSize: 22.0,
                 fontWeight: FontWeight.bold,
@@ -167,7 +167,7 @@ class _CovidBarChartState extends State<CovidBarChart> {
                       DateTime now = new DateTime.now();
                       DateTime date = new DateTime(now.year, now.month, now.day);
                       var covid = Snapshot.data;
-                      print(covid.data1);
+//                      print(covid.data1);
 
                       generateData(
                           date,
